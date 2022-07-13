@@ -5,10 +5,12 @@
       <map>
         <entry key="..\:/flower shop/flower-shop/app/src/main/res/drawable/bg_button.xml" value="0.37864583333333335" />
         <entry key="..\:/flower shop/flower-shop/app/src/main/res/drawable/bg_signin_signup.xml" value="0.37864583333333335" />
+        <entry key="..\:/flower shop/flower-shop/app/src/main/res/drawable/bg_splash.xml" value="0.37864583333333335" />
         <entry key="..\:/flower shop/flower-shop/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.37864583333333335" />
         <entry key="..\:/flower shop/flower-shop/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.37864583333333335" />
         <entry key="..\:/flower shop/flower-shop/app/src/main/res/layout/activity_main.xml" value="0.3625" />
-        <entry key="..\:/flower shop/flower-shop/app/src/main/res/layout/fragment_sign_in.xml" value="0.3625" />
+        <entry key="..\:/flower shop/flower-shop/app/src/main/res/layout/activity_splash.xml" value="0.3625" />
+        <entry key="..\:/flower shop/flower-shop/app/src/main/res/layout/fragment_sign_in.xml" value="0.34421364985163205" />
         <entry key="..\:/flower shop/flower-shop/app/src/main/res/layout/fragment_sign_up.xml" value="0.3625" />
       </map>
     </option>

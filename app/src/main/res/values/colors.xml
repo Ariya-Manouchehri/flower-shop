@@ -9,8 +9,11 @@
     <color name="white">#FFFFFFFF</color>
 
 
-    <color name="startGradient">#f48fb1</color>
-    <color name="centerGradient">#761EAE</color>
-    <color name="endGradient">#442D85</color>
+    <color name="startGradient">#191A35</color>
+    <color name="centerGradient">#34366E</color>
+    <color name="endGradient">#5053AA</color>
 
+    <color name="startSplash">#f48fb1</color>
+    <color name="centerSplash">#761EAE</color>
+    <color name="endSplash">#442D85</color>
 </resources>
