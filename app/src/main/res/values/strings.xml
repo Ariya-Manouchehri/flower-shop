@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">flower shop</string>
+
+    <string name="SignInFragmentTag">SignInFragment</string>
+    <string name="SignUpFragmentTag">SignUpFragment</string>
+
+</resources>
