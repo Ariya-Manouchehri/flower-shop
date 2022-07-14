@@ -3,5 +3,11 @@
 
     <string name="SignInFragmentTag">SignInFragment</string>
     <string name="SignUpFragmentTag">SignUpFragment</string>
+    <string name="HomeFragmentTag">HomeFragment</string>
+    <string name="ProfileFragmentTag">ProfileFragment</string>
+    <string name="CartFragmentTag">CartFragment</string>
+    <string name="CategoryFragmentTag">CategoryFragment</string>
+
+
 
 </resources>

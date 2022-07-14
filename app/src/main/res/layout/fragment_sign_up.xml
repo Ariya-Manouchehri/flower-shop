@@ -11,20 +11,22 @@
         android:id="@+id/flowerIcon"
         android:layout_width="200dp"
         android:layout_height="200dp"
+        android:layout_above="@+id/signUp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
         android:src="@drawable/flower_icon" />
 
     <TextView
+        android:id="@+id/signUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/flowerIcon"
+        android:layout_above="@+id/usernameLayout"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:fontFamily="sans-serif-black"
         android:text="Sign Up"
         android:textColor="#ffffffff"
-        android:textSize="38sp" />
+        android:textSize="42sp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/usernameLayout"
