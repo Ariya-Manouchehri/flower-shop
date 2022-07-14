@@ -52,7 +52,7 @@ public class SignInFragment extends Fragment implements View.OnClickListener {
                 }
                 break;
             case R.id.signup_text:
-                getFragmentManager().beginTransaction().replace(R.id.container, new SignUpFragment(), getString(R.string.SignUpFragmentTag)).addToBackStack(getString(R.string.SignUpFragmentTag)).commit();
+                getFragmentManager().beginTransaction().setCustomAnimations(R.anim.fadeout_fragment,R.anim.slidein_fragment,R.anim.fadein_fragment,R.anim.slideout_fragment).replace(R.id.container, new SignUpFragment(), getString(R.string.SignUpFragmentTag)).addToBackStack(getString(R.string.SignUpFragmentTag)).commit();
                 break;
         }
 

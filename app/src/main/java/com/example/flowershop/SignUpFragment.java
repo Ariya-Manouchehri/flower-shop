@@ -1,5 +1,6 @@
 package com.example.flowershop;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -9,9 +10,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
-public class SignUpFragment extends Fragment {
+import com.google.android.material.textfield.TextInputEditText;
 
+public class SignUpFragment extends Fragment implements View.OnClickListener {
+TextInputEditText username,password,confirmPassword;
+Button signUp_btn;
     public SignUpFragment() {
 
     }
@@ -25,56 +30,19 @@ public class SignUpFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        username = view.findViewById(R.id.username);
+        password = view.findViewById(R.id.password);
+        confirmPassword = view.findViewById(R.id.confirmPassword);
+        signUp_btn = view.findViewById(R.id.signUp_btn);
+
+        signUp_btn.setOnClickListener(this);
     }
 
-//    @Override
-//    public void onClick(View v) {
-//        if (checkUsername(username.getText().toString().trim())){
-//
-//        }
-//
-//        if (checkpassword(username.getText().toString().trim()));
-//
-//    }
-//
-//
-//    private boolean checkUsername(String username) {
-//        usernameLayout.setErrorEnabled(true);
-//        if (username.length() < 4) {
-//            usernameLayout.setError("Minimum length of username is 4.");
-//            return false;
-//        }
-//        for (int i = 0; i < username.length(); i++) {
-//            if (username.charAt(i) == ' ' || username.charAt(i) == '@' || username.charAt(i) == '!' || username.charAt(i) == '$' || username.charAt(i) == '%' || username.charAt(i) == '^' || username.charAt(i) == '#' || username.charAt(i) == '&' || username.charAt(i) == '*' || username.charAt(i) == '(' || username.charAt(i) == ')' || username.charAt(i) == '-' || username.charAt(i) == '_' || username.charAt(i) == '+' || username.charAt(i) == '=') {
-//                usernameLayout.setError("username can`t contain this characters !@#$%^&*()_-+= and also empty space");
-//                return false;
-//            }
-//        }
-////        if (DataBas.hasUsername(name)) {
-////            sign_up_error_label_username.setVisible(true);
-////            sign_up_error_label_username.setText("username already exist try an other one!");
-////            return false;
-////        }
-//        return true;
-//    }
-//
-//
-//    private boolean checkpassword(String password) {
-//        if (password.length() < 8) {
-//            sign_up_error_label_password.setVisible(true);
-//            sign_up_error_label_password.setText("minimum length od password is 8.");
-//            return false;
-//        }
-//        if (password.contains(" ")) {
-//            sign_up_error_label_password.setVisible(true);
-//            sign_up_error_label_password.setText("password cant contain empty space!");
-//            return false;
-//        }
-//        if (!password.equals(conPass)) {
-//            sign_up_error_label_password.setVisible(true);
-//            sign_up_error_label_password.setText("password is not pair with confirm password!");
-//            return false;
-//        }
-//        return true;
-//    }
+    @Override
+    public void onClick(View v) {
+        getFragmentManager().beginTransaction().remove(getFragmentManager().findFragmentById(R.id.container)).commit();
+        Intent intent = new Intent(getActivity(),HomeActivity.class);
+        startActivity(intent);
+        getActivity().finish();
+    }
 }
