@@ -3,11 +3,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    tools:context=".HomeFragment"
+    android:background="#2e2e2e">
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/HomeViewPager"
+    <include android:id="@+id/toolbar" layout="@layout/toolbar_homefragment" />
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_margin="10dp" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar">
+<TextView
+    android:id="@+id/topFlower"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="top flower"
+    android:textSize="24sp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="20dp"
+    android:fontFamily="sans-serif-condensed-medium"
+    android:textColor="#ffffff" />
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/HomeViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="10dp"
+            android:layout_below="@+id/topFlower"/>
+    </RelativeLayout>
 </RelativeLayout>
