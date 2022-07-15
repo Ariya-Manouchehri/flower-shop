@@ -7,17 +7,18 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
-    HomeViewPagerAdapter homeViewPagerAdapter;
-    ArrayList<Integer> images=new ArrayList<>();
-    ViewPager viewPager;
-    public HomeFragment(){
+    RecyclerViewTopFlowerAdapter recyclerViewTopFlowerAdapter;
+    ArrayList<Flower> flowers = new ArrayList<>();
+    RecyclerView recyclerTopFlower;
+
+    public HomeFragment() {
 
     }
 
@@ -30,11 +31,17 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        viewPager = view.findViewById(R.id.HomeViewPager);
-        for (int i = 0; i < 4; i++) {
-        images.add(R.drawable.flower_icon);
-        }
-        homeViewPagerAdapter = new HomeViewPagerAdapter(images);
-        viewPager.setAdapter(homeViewPagerAdapter);
+        recyclerTopFlower = view.findViewById(R.id.recyclerViewPopular);
+
+        flowers.add(new Flower("bonsai", R.drawable.aloe_vera, 50));
+        flowers.add(new Flower("calibrachoa", R.drawable.calibrachoa, 75));
+        flowers.add(new Flower("agapanthus", R.drawable.agapanthus, 100));
+        flowers.add(new Flower("lithops", R.drawable.lithops, 50));
+        flowers.add(new Flower("opuntia_cactus", R.drawable.opuntia_cactus, 80));
+
+        recyclerViewTopFlowerAdapter = new RecyclerViewTopFlowerAdapter(getContext(), flowers);
+        recyclerTopFlower.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
+        recyclerTopFlower.setAdapter(recyclerViewTopFlowerAdapter);
+
     }
 }

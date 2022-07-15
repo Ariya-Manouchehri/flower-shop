@@ -6,19 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_homefragment" />
+
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_alignParentBottom="true"
-        app:menu="@menu/bottom_navigation"
         android:background="@color/startGradient"
+        app:itemIconSize="30dp"
         app:itemIconTint="@drawable/nav_item_color_state"
         app:itemTextColor="@drawable/nav_item_color_state"
-        app:itemIconSize="30dp"/>
+        app:menu="@menu/bottom_navigation" />
 </RelativeLayout>

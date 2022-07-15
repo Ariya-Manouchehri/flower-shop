@@ -1,32 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".HomeFragment"
-    android:background="#2e2e2e">
-
-    <include android:id="@+id/toolbar" layout="@layout/toolbar_homefragment" />
+    android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar">
-<TextView
-    android:id="@+id/topFlower"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="top flower"
-    android:textSize="24sp"
-    android:layout_marginLeft="20dp"
-    android:layout_marginTop="20dp"
-    android:fontFamily="sans-serif-condensed-medium"
-    android:textColor="#ffffff" />
+        android:layout_height="match_parent"
+        android:background="#2e2e2e"
+        tools:context=".HomeFragment">
+
         <androidx.viewpager.widget.ViewPager
-            android:id="@+id/HomeViewPager"
+            android:id="@+id/homeViewPager"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_margin="10dp"
-            android:layout_below="@+id/topFlower"/>
+            android:layout_height="200dp" />
+
+        <RelativeLayout
+            android:id="@+id/PopularLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/homeViewPager">
+
+            <TextView
+                android:id="@+id/Popular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Popular"
+                android:textColor="#ffffff"
+                android:textSize="24sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewPopular"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@+id/Popular"
+                android:scrollbars="horizontal" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/RecentlyLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/PopularLayout">
+
+            <TextView
+                android:id="@+id/Recently"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Recently"
+                android:textColor="#ffffff"
+                android:textSize="24sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewRecently"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@+id/Recently"
+                android:orientation="horizontal" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/DiscountLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/RecentlyLayout">
+
+            <TextView
+                android:id="@+id/Discount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Discount"
+                android:textColor="#ffffff"
+                android:textSize="24sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewDiscount"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@+id/Discount"
+                android:orientation="horizontal" />
+        </RelativeLayout>
     </RelativeLayout>
-</RelativeLayout>
+</ScrollView>
