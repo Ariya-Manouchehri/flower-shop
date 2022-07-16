@@ -1,4 +1,4 @@
-package com.example.flowershop;
+package com.example.flowershop.Fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.flowershop.R;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class SignInFragment extends Fragment implements View.OnClickListener {

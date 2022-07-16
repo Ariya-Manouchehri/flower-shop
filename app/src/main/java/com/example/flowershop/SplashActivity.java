@@ -11,6 +11,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.flowershop.Activity.MainActivity;
+
 public class SplashActivity extends AppCompatActivity {
 
     private static final int SPLASH_SCREEN_TIME_OUT = 2000;

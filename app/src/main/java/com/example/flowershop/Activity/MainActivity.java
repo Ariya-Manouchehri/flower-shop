@@ -1,15 +1,15 @@
-package com.example.flowershop;
+package com.example.flowershop.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.WindowManager;
-import android.widget.Toast;
+
+import com.example.flowershop.Fragment.SignInFragment;
+import com.example.flowershop.R;
 
 public class MainActivity extends AppCompatActivity {
 public static final int finish = 123;

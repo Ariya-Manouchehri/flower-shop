@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_signin_signup"
-    tools:context=".SignInFragment">
+    tools:context=".Fragment.SignInFragment">
 
     <ImageView
         android:id="@+id/flowerIcon"

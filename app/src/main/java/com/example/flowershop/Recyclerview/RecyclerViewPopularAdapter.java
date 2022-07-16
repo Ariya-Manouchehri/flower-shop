@@ -1,4 +1,4 @@
-package com.example.flowershop;
+package com.example.flowershop.Recyclerview;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,13 +11,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.flowershop.Flower;
+import com.example.flowershop.R;
+
 import java.util.ArrayList;
 
-public class RecyclerViewTopFlowerAdapter extends RecyclerView.Adapter<RecyclerViewTopFlowerAdapter.Holder> {
+public class RecyclerViewPopularAdapter extends RecyclerView.Adapter<RecyclerViewPopularAdapter.Holder> {
     Context context;
     ArrayList<Flower> flowers;
 
-    public RecyclerViewTopFlowerAdapter(Context context, ArrayList<Flower> flowers) {
+    public RecyclerViewPopularAdapter(Context context, ArrayList<Flower> flowers) {
         this.context = context;
         this.flowers = flowers;
     }
@@ -25,7 +28,7 @@ public class RecyclerViewTopFlowerAdapter extends RecyclerView.Adapter<RecyclerV
     @NonNull
     @Override
     public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.slied_homeview,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.listhomeview,parent,false);
         return new Holder(view);
     }
 
@@ -41,18 +44,12 @@ public class RecyclerViewTopFlowerAdapter extends RecyclerView.Adapter<RecyclerV
 
     class Holder extends RecyclerView.ViewHolder {
         ImageView img;
-        TextView name;
-        RatingBar ratingBar;
         public Holder(@NonNull View itemView) {
             super(itemView);
-            img = itemView.findViewById(R.id.image);
-            name = itemView.findViewById(R.id.name);
-            ratingBar = itemView.findViewById(R.id.ratingbar);
+            img = itemView.findViewById(R.id.listImage);
         }
         public void fill(Flower flower){
             img.setImageResource(flower.getPhoto());
-            name.setText(flower.getName());
-            ratingBar.setProgress(flower.getRatingbar());
         }
     }
 }

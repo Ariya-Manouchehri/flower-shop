@@ -1,7 +1,6 @@
-package com.example.flowershop;
+package com.example.flowershop.Recyclerview;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +10,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.flowershop.Flower;
+import com.example.flowershop.R;
 
 import java.util.ArrayList;
 

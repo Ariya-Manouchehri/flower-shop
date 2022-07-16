@@ -1,4 +1,4 @@
-package com.example.flowershop;
+package com.example.flowershop.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.flowershop.Activity.HomeActivity;
+import com.example.flowershop.R;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class SignUpFragment extends Fragment implements View.OnClickListener {
@@ -41,7 +43,7 @@ Button signUp_btn;
     @Override
     public void onClick(View v) {
         getFragmentManager().beginTransaction().remove(getFragmentManager().findFragmentById(R.id.container)).commit();
-        Intent intent = new Intent(getActivity(),HomeActivity.class);
+        Intent intent = new Intent(getActivity(), HomeActivity.class);
         startActivity(intent);
         getActivity().finish();
     }

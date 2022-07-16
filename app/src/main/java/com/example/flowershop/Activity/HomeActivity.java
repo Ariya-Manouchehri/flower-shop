@@ -1,18 +1,18 @@
-package com.example.flowershop;
+package com.example.flowershop.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
-import android.os.Handler;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.example.flowershop.Fragment.CartFragment;
+import com.example.flowershop.Fragment.CategoryFragment;
+import com.example.flowershop.Fragment.HomeFragment;
+import com.example.flowershop.Fragment.ProfileFragment;
+import com.example.flowershop.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {

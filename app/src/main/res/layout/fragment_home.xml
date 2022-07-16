@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#F8F8F8"
-        tools:context=".HomeFragment">
+        tools:context=".Fragment.HomeFragment">
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/homeViewPager"
@@ -61,9 +61,9 @@
                     android:src="@drawable/ic_baseline_navigate_next_24" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerViewDiscountImage"
+                    android:id="@+id/recyclerViewDiscount"
                     android:layout_width="match_parent"
-                    android:layout_height="130dp"
+                    android:layout_height="140dp"
                     android:layout_below="@+id/Discount"
                     android:scrollbars="horizontal" />
             </RelativeLayout>
@@ -116,7 +116,7 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerViewPopular"
                     android:layout_width="match_parent"
-                    android:layout_height="130dp"
+                    android:layout_height="140dp"
                     android:layout_below="@+id/Popular"
                     android:scrollbars="horizontal" />
             </RelativeLayout>
@@ -170,7 +170,7 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerViewRecently"
                     android:layout_width="match_parent"
-                    android:layout_height="130dp"
+                    android:layout_height="140dp"
                     android:layout_below="@+id/Recently"
                     android:scrollbars="horizontal" />
             </RelativeLayout>
