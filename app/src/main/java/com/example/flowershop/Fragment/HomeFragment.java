@@ -1,21 +1,28 @@
 package com.example.flowershop.Fragment;
 
 import android.os.Bundle;
+import android.text.Html;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.flowershop.Flower;
+import com.example.flowershop.HomeViewpagerAdapter;
 import com.example.flowershop.R;
 import com.example.flowershop.Recyclerview.RecyclerViewDiscountAdapter;
 import com.example.flowershop.Recyclerview.RecyclerViewPopularAdapter;
 import com.example.flowershop.Recyclerview.RecyclerViewRecentlyAdapter;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 
@@ -23,15 +30,18 @@ public class HomeFragment extends Fragment {
     RecyclerViewPopularAdapter recyclerViewPopularAdapter;
     RecyclerViewDiscountAdapter recyclerViewDiscountAdapter;
     RecyclerViewRecentlyAdapter recyclerViewRecentlyAdapter;
+    HomeViewpagerAdapter viewpagerAdapter;
+    com.google.android.material.tabs.TabLayout dots;
 
-    ArrayList<Flower> flowers = new ArrayList<>();
     ArrayList<Flower> flowersPopular = new ArrayList<>();
     ArrayList<Flower> flowersDiscount = new ArrayList<>();
     ArrayList<Flower> flowersRecently = new ArrayList<>();
+    ArrayList<Flower> flowersViewpager = new ArrayList<>();
 
     RecyclerView recyclerViewPopular;
     RecyclerView recyclerViewDiscount;
     RecyclerView recyclerViewRecently;
+    ViewPager viewPagerHome;
 
 
     public HomeFragment() {
@@ -50,6 +60,8 @@ public class HomeFragment extends Fragment {
         recyclerViewPopular = view.findViewById(R.id.recyclerViewPopular);
         recyclerViewRecently = view.findViewById(R.id.recyclerViewRecently);
         recyclerViewDiscount = view.findViewById(R.id.recyclerViewDiscount);
+        viewPagerHome = view.findViewById(R.id.homeViewPager);
+        dots = view.findViewById(R.id.dots);
 
         flowersPopular.add(new Flower("bonsai", R.drawable.aloe_vera, 50));
         flowersPopular.add(new Flower("calibrachoa", R.drawable.calibrachoa, 75));
@@ -80,17 +92,50 @@ public class HomeFragment extends Fragment {
         flowersRecently.add(new Flower("opuntia_cactus", R.drawable.calibrachoa, 80));
 
 
+        flowersViewpager.add(new Flower("yellow pansy", R.drawable.yellow_pansy, 50));
+        flowersViewpager.add(new Flower("rosa burgundy", R.drawable.rosa_burgundy, 75));
+        flowersViewpager.add(new Flower("pincushion", R.drawable.pincushion, 100));
+        flowersViewpager.add(new Flower("red cactus", R.drawable.red_cactus, 80));
+        flowersViewpager.add(new Flower("red cactus", R.drawable.red_cactus, 80));
+
+
         recyclerViewPopularAdapter = new RecyclerViewPopularAdapter(getContext(), flowersPopular);
         recyclerViewDiscountAdapter = new RecyclerViewDiscountAdapter(getContext(), flowersDiscount);
         recyclerViewRecentlyAdapter = new RecyclerViewRecentlyAdapter(getContext(), flowersRecently);
+        viewpagerAdapter = new HomeViewpagerAdapter(flowersViewpager);
 
-        recyclerViewPopular.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
+        recyclerViewPopular.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
         recyclerViewPopular.setAdapter(recyclerViewPopularAdapter);
 
-        recyclerViewRecently.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
+        recyclerViewRecently.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
         recyclerViewRecently.setAdapter(recyclerViewRecentlyAdapter);
 
-        recyclerViewDiscount.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
+        recyclerViewDiscount.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
         recyclerViewDiscount.setAdapter(recyclerViewDiscountAdapter);
+
+        viewPagerHome.setAdapter(viewpagerAdapter);
+        dots.setupWithViewPager(viewPagerHome, true);
+        viewPagerHome.setCurrentItem(0);
+        viewpagerAdapter.setTimer(viewPagerHome, 5, 4,0);
+
+        viewPagerHome.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                viewpagerAdapter.stopTimer();
+                viewpagerAdapter.setTimer(viewPagerHome, 5, 5,position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
     }
+
 }

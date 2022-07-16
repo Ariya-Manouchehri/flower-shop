@@ -15,4 +15,6 @@
     <color name="startSplash">#f48fb1</color>
     <color name="centerSplash">#761EAE</color>
     <color name="endSplash">#442D85</color>
+
+    <color name="pagerdiActive">#FFFFFF</color>
 </resources>

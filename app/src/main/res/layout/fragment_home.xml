@@ -14,7 +14,18 @@
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/homeViewPager"
             android:layout_width="match_parent"
-            android:layout_height="200dp" />
+            android:layout_height="200dp"/>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/dots"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="160dp"
+            app:tabBackground="@drawable/tab_selector"
+            app:tabGravity="center"
+            app:tabIndicatorHeight="0dp"
+            android:background="@android:color/transparent"/>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/CardViewDiscount"
@@ -49,7 +60,7 @@
                     android:gravity="top"
                     android:text="Discount"
                     android:textColor="#2e2e2e"
-                    android:textSize="24sp" />
+                    android:textSize="20sp" />
 
                 <ImageView
                     android:layout_width="28dp"
@@ -86,8 +97,8 @@
 
                 <ImageView
                     android:id="@+id/PopularImage"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
                     android:src="@drawable/ic_baseline_star_24" />
@@ -102,7 +113,7 @@
                     android:fontFamily="sans-serif-condensed-medium"
                     android:text="Popular"
                     android:textColor="#2e2e2e"
-                    android:textSize="24sp" />
+                    android:textSize="20sp" />
 
                 <ImageView
                     android:layout_width="28dp"
@@ -156,7 +167,7 @@
                     android:fontFamily="sans-serif-condensed-medium"
                     android:text="Recently"
                     android:textColor="#2e2e2e"
-                    android:textSize="24sp" />
+                    android:textSize="20sp" />
 
                 <ImageView
                     android:layout_width="28dp"
@@ -179,6 +190,6 @@
         <Space
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_below="@id/cardViewRecently"/>
+            android:layout_below="@id/cardViewRecently" />
     </RelativeLayout>
 </ScrollView>
