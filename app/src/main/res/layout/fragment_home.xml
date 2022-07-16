@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -7,7 +8,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#2e2e2e"
+        android:background="#F8F8F8"
         tools:context=".HomeFragment">
 
         <androidx.viewpager.widget.ViewPager
@@ -15,80 +16,169 @@
             android:layout_width="match_parent"
             android:layout_height="200dp" />
 
-        <RelativeLayout
-            android:id="@+id/PopularLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/homeViewPager">
-
-            <TextView
-                android:id="@+id/Popular"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:fontFamily="sans-serif-condensed-medium"
-                android:text="Popular"
-                android:textColor="#ffffff"
-                android:textSize="24sp" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerViewPopular"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_below="@+id/Popular"
-                android:scrollbars="horizontal" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/RecentlyLayout"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/CardViewDiscount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/PopularLayout">
+            android:layout_below="@+id/homeViewPager"
+            android:layout_margin="10dp"
+            android:elevation="2dp"
+            app:cardCornerRadius="10dp">
 
-            <TextView
-                android:id="@+id/Recently"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:fontFamily="sans-serif-condensed-medium"
-                android:text="Recently"
-                android:textColor="#ffffff"
-                android:textSize="24sp" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerViewRecently"
+            <RelativeLayout
+                android:id="@+id/DiscountLayout"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_below="@+id/Recently"
-                android:orientation="horizontal" />
-        </RelativeLayout>
+                android:layout_height="match_parent">
 
+                <ImageView
+                    android:id="@+id/DiscountImage"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/ic_baseline_discount_24" />
 
-        <RelativeLayout
-            android:id="@+id/DiscountLayout"
+                <TextView
+                    android:id="@+id/Discount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/DiscountImage"
+                    android:layout_alignBottom="@+id/DiscountImage"
+                    android:layout_toRightOf="@+id/DiscountImage"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="top"
+                    android:text="Discount"
+                    android:textColor="#2e2e2e"
+                    android:textSize="24sp" />
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_alignTop="@+id/DiscountImage"
+                    android:layout_alignBottom="@+id/DiscountImage"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_baseline_navigate_next_24" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewDiscountImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:layout_below="@+id/Discount"
+                    android:scrollbars="horizontal" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewPopular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/RecentlyLayout">
+            android:layout_below="@+id/CardViewDiscount"
+            android:layout_margin="10dp"
+            android:backgroundTint="#ffffff"
+            android:elevation="8dp"
+            app:cardCornerRadius="10dp">
 
-            <TextView
-                android:id="@+id/Discount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:fontFamily="sans-serif-condensed-medium"
-                android:text="Discount"
-                android:textColor="#ffffff"
-                android:textSize="24sp" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerViewDiscount"
+            <RelativeLayout
+                android:id="@+id/PopularLayout"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_below="@+id/Discount"
-                android:orientation="horizontal" />
-        </RelativeLayout>
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/PopularImage"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/ic_baseline_star_24" />
+
+                <TextView
+                    android:id="@+id/Popular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/PopularImage"
+                    android:layout_alignBottom="@+id/PopularImage"
+                    android:layout_toRightOf="@+id/PopularImage"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Popular"
+                    android:textColor="#2e2e2e"
+                    android:textSize="24sp" />
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_alignTop="@+id/PopularImage"
+                    android:layout_alignBottom="@+id/PopularImage"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_baseline_navigate_next_24" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewPopular"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:layout_below="@+id/Popular"
+                    android:scrollbars="horizontal" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewRecently"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cardViewPopular"
+            android:layout_margin="10dp"
+            android:backgroundTint="#ffffff"
+            android:elevation="8dp"
+            app:cardCornerRadius="10dp">
+
+            <RelativeLayout
+                android:id="@+id/RecentlyLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/RecentlyImage"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/ic_baseline_access_time_filled_24" />
+
+                <TextView
+                    android:id="@+id/Recently"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/RecentlyImage"
+                    android:layout_alignBottom="@+id/RecentlyImage"
+                    android:layout_toRightOf="@+id/RecentlyImage"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Recently"
+                    android:textColor="#2e2e2e"
+                    android:textSize="24sp" />
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_alignTop="@+id/RecentlyImage"
+                    android:layout_alignBottom="@+id/RecentlyImage"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_baseline_navigate_next_24" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewRecently"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:layout_below="@+id/Recently"
+                    android:scrollbars="horizontal" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/cardViewRecently"/>
     </RelativeLayout>
 </ScrollView>

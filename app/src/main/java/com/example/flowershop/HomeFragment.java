@@ -31,7 +31,7 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        recyclerTopFlower = view.findViewById(R.id.recyclerViewPopular);
+        recyclerTopFlower = view.findViewById(R.id.recyclerViewRecently);
 
         flowers.add(new Flower("bonsai", R.drawable.aloe_vera, 50));
         flowers.add(new Flower("calibrachoa", R.drawable.calibrachoa, 75));
