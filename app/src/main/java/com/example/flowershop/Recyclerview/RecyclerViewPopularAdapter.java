@@ -28,7 +28,7 @@ public class RecyclerViewPopularAdapter extends RecyclerView.Adapter<RecyclerVie
     @NonNull
     @Override
     public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.listhomeview,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.list_popular,parent,false);
         return new Holder(view);
     }
 
@@ -44,12 +44,20 @@ public class RecyclerViewPopularAdapter extends RecyclerView.Adapter<RecyclerVie
 
     class Holder extends RecyclerView.ViewHolder {
         ImageView img;
+        TextView name,ratNumber;
+                RatingBar rating;
         public Holder(@NonNull View itemView) {
             super(itemView);
             img = itemView.findViewById(R.id.listImage);
+            name = itemView.findViewById(R.id.name);
+            ratNumber = itemView.findViewById(R.id.ratNumber);
+            rating = itemView.findViewById(R.id.rating);
         }
         public void fill(Flower flower){
             img.setImageResource(flower.getPhoto());
+            name.setText(flower.getName());
+            rating.setRating((float) flower.getRatingbar());
+            ratNumber.setText(String.valueOf(flower.getRatingbar()*2));
         }
     }
 }

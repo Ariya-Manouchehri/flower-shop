@@ -38,7 +38,7 @@ ArrayList<Flower> flowers = new ArrayList<>();
 
         flowers.add(new Flower("bonsai", R.drawable.aloe_vera, 500));
         flowers.add(new Flower("calibrachoa", R.drawable.calibrachoa, 715));
-        flowers.add(new Flower("agapanthus", R.drawable.agapanthus, 1000));
+        flowers.add(new Flower("agapanthus", R.drawable.agapanthus, 100));
         flowers.add(new Flower("lithops", R.drawable.lithops, 50));
         flowers.add(new Flower("opuntia_cactus", R.drawable.flowering_kale, 87));
         flowers.add(new Flower("opuntia_cactus", R.drawable.dianthus, 800));

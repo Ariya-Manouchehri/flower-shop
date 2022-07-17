@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="120dp"
+    android:layout_height="170dp"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="10dp"
+    android:backgroundTint="#838383">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/listImage"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/flowering_kale" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/listImage"
+            android:background="#FFFFFF" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/line">
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:id="@+id/count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FB5245"
+                android:layout_below="@id/name"
+                android:layout_alignLeft="@+id/name"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+            <View
+                android:id="@+id/lineDiscount"
+                android:layout_width="42dp"
+                android:layout_height="2dp"
+                android:layout_below="@+id/name"
+                android:background="#FB5245"
+                android:layout_marginTop="12dp"
+                android:layout_marginLeft="5dp"/>
+
+
+            <TextView
+                android:id="@+id/disCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#54B158"
+                android:layout_alignTop="@+id/count"
+                android:layout_alignBottom="@+id/count"
+                android:layout_toRightOf="@+id/count"
+                android:layout_marginLeft="20dp"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+        </RelativeLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

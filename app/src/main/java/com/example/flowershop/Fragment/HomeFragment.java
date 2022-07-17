@@ -63,23 +63,23 @@ public class HomeFragment extends Fragment {
         viewPagerHome = view.findViewById(R.id.homeViewPager);
         dots = view.findViewById(R.id.dots);
 
-        flowersPopular.add(new Flower("bonsai", R.drawable.aloe_vera, 50));
-        flowersPopular.add(new Flower("calibrachoa", R.drawable.calibrachoa, 75));
-        flowersPopular.add(new Flower("agapanthus", R.drawable.agapanthus, 100));
-        flowersPopular.add(new Flower("lithops", R.drawable.lithops, 50));
-        flowersPopular.add(new Flower("opuntia_cactus", R.drawable.flowering_kale, 80));
-        flowersPopular.add(new Flower("opuntia_cactus", R.drawable.dianthus, 80));
-        flowersPopular.add(new Flower("opuntia_cactus", R.drawable.agapanthus, 80));
-        flowersPopular.add(new Flower("opuntia_cactus", R.drawable.bougainvillea, 80));
+        flowersPopular.add(new Flower("bonsai", R.drawable.aloe_vera, 5));
+        flowersPopular.add(new Flower("calibrachoa", R.drawable.calibrachoa, 4));
+        flowersPopular.add(new Flower("agapanthus", R.drawable.agapanthus, 2));
+        flowersPopular.add(new Flower("lithops", R.drawable.lithops, 2));
+        flowersPopular.add(new Flower("opuntia_cactus", R.drawable.flowering_kale, 3));
+        flowersPopular.add(new Flower("opuntia_cactus", R.drawable.dianthus, 3));
+        flowersPopular.add(new Flower("opuntia_cactus", R.drawable.agapanthus, 5));
+        flowersPopular.add(new Flower("opuntia_cactus", R.drawable.bougainvillea, 4));
 
 
         flowersDiscount.add(new Flower("bonsai", R.drawable.penny_orange_jumpup, 50));
-        flowersDiscount.add(new Flower("agapanthus", R.drawable.california_snow, 100));
-        flowersDiscount.add(new Flower("lithops", R.drawable.cymbidium, 50));
-        flowersDiscount.add(new Flower("opuntia_cactus", R.drawable.mexican_golden_barrel_cactus, 80));
-        flowersDiscount.add(new Flower("opuntia_cactus", R.drawable.calibrachoa, 80));
-        flowersDiscount.add(new Flower("opuntia_cactus", R.drawable.iris_siberica, 80));
-        flowersDiscount.add(new Flower("opuntia_cactus", R.drawable.penny_orange_jumpup, 80));
+        flowersDiscount.add(new Flower("agapanthus", R.drawable.california_snow, 120));
+        flowersDiscount.add(new Flower("lithops", R.drawable.cymbidium, 410));
+        flowersDiscount.add(new Flower("opuntia_cactus", R.drawable.mexican_golden_barrel_cactus, 505));
+        flowersDiscount.add(new Flower("opuntia_cactus", R.drawable.calibrachoa, 48));
+        flowersDiscount.add(new Flower("opuntia_cactus", R.drawable.iris_siberica, 320));
+        flowersDiscount.add(new Flower("opuntia_cactus", R.drawable.penny_orange_jumpup, 312));
 
 
         flowersRecently.add(new Flower("bonsai", R.drawable.pelargonium, 50));

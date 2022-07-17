@@ -56,7 +56,7 @@ public class CartRecyclerViewAdapter extends RecyclerView.Adapter<CartRecyclerVi
         public void fill(Flower flower) {
             flowerImage.setImageResource(flower.getPhoto());
             flowerName.setText(flower.getName());
-            flowerPay.setText(String.valueOf(flower.getRatingbar()));
+            flowerPay.setText("$"+flower.getRatingbar());
         }
     }
 }

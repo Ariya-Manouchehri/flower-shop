@@ -28,7 +28,7 @@ public class RecyclerViewDiscountAdapter extends RecyclerView.Adapter<RecyclerVi
     @NonNull
     @Override
     public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.listhomeview,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.list_discount,parent,false);
         return new Holder(view);
     }
 
@@ -44,12 +44,20 @@ public class RecyclerViewDiscountAdapter extends RecyclerView.Adapter<RecyclerVi
 
     class Holder extends RecyclerView.ViewHolder {
         ImageView img;
+        TextView name,count,disCount;
         public Holder(@NonNull View itemView) {
             super(itemView);
             img = itemView.findViewById(R.id.listImage);
+            name = itemView.findViewById(R.id.name);
+            count = itemView.findViewById(R.id.count);
+            disCount = itemView.findViewById(R.id.disCount);
         }
         public void fill(Flower flower){
             img.setImageResource(flower.getPhoto());
+            name.setText(flower.getName());
+            count.setText("$"+flower.getRatingbar());
+            disCount.setText("$"+ (flower.getRatingbar() - 20));
+
         }
     }
 }

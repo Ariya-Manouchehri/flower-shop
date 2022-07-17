@@ -11,6 +11,7 @@
         <entry key="..\:/flower shop/flower-shop/app/src/main/res/drawable/bg_Cart.xml" value="0.37864583333333335" />
         <entry key="..\:/flower shop/flower-shop/app/src/main/res/drawable/bg_button.xml" value="0.37864583333333335" />
         <entry key="..\:/flower shop/flower-shop/app/src/main/res/drawable/bg_button_cart.xml" value="0.37864583333333335" />
+        <entry key="..\:/flower shop/flower-shop/app/src/main/res/drawable/bg_cart.xml" value="0.3728205128205128" />
         <entry key="..\:/flower shop/flower-shop/app/src/main/res/drawable/bg_cartfragment.xml" value="0.37864583333333335" />
         <entry key="..\:/flower shop/flower-shop/app/src/main/res/drawable/bg_category.xml" value="0.37864583333333335" />
         <entry key="..\:/flower shop/flower-shop/app/src/main/res/drawable/bg_category_view.xml" value="0.37864583333333335" />
@@ -52,6 +53,8 @@
         <entry key="..\:/flower shop/flower-shop/app/src/main/res/layout/fragment_sign_up.xml" value="0.23277591973244147" />
         <entry key="..\:/flower shop/flower-shop/app/src/main/res/layout/list_cart.xml" value="0.3625" />
         <entry key="..\:/flower shop/flower-shop/app/src/main/res/layout/list_category.xml" value="0.3625" />
+        <entry key="..\:/flower shop/flower-shop/app/src/main/res/layout/list_discount.xml" value="0.3625" />
+        <entry key="..\:/flower shop/flower-shop/app/src/main/res/layout/list_popular.xml" value="0.3625" />
         <entry key="..\:/flower shop/flower-shop/app/src/main/res/layout/listhomeview.xml" value="0.3625" />
         <entry key="..\:/flower shop/flower-shop/app/src/main/res/layout/slied_homeview.xml" value="0.3625" />
         <entry key="..\:/flower shop/flower-shop/app/src/main/res/layout/toolbar_homefragment.xml" value="0.3569230769230769" />
