@@ -8,6 +8,7 @@
     <string name="CartFragmentTag">CartFragment</string>
     <string name="CategoryFragmentTag">CategoryFragment</string>
 
+    <string name="UserAccountInformationFragmentTag">UserAccountInformationFragment</string>
 
 
 </resources>
