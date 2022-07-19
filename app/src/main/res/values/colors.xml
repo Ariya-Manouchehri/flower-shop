@@ -17,4 +17,10 @@
     <color name="endSplash">#442D85</color>
 
     <color name="pagerdiActive">#FFFFFF</color>
+
+    <color name="category1">#BBE1FF</color>
+    <color name="category2">#FF7E7E</color>
+    <color name="category3">#A9FFAD</color>
+    <color name="category4">#FDF189</color>
+
 </resources>

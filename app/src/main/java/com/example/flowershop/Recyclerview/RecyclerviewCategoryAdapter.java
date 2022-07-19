@@ -19,7 +19,8 @@ import java.util.ArrayList;
 public class RecyclerviewCategoryAdapter extends RecyclerView.Adapter<RecyclerviewCategoryAdapter.Holder> {
     Context context;
     ArrayList<Flower> flowers;
-    int [] bgCategory ={R.drawable.bg_flower1,R.drawable.bg_flower2,R.drawable.bg_flower3,R.drawable.bg_flower4};
+    int[] bgCategory = {R.drawable.bg_flower1, R.drawable.bg_flower2, R.drawable.bg_flower3, R.drawable.bg_flower4};
+    onClickListener listener;
 
     public RecyclerviewCategoryAdapter(Context context, ArrayList<Flower> flowers) {
         this.context = context;
@@ -35,7 +36,7 @@ public class RecyclerviewCategoryAdapter extends RecyclerView.Adapter<Recyclervi
 
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
-        holder.fill(flowers.get(position),position);
+        holder.fill(flowers.get(position), position);
     }
 
     @Override
@@ -54,13 +55,30 @@ public class RecyclerviewCategoryAdapter extends RecyclerView.Adapter<Recyclervi
             nameListCategory = itemView.findViewById(R.id.nameListCategory);
             countListCategory = itemView.findViewById(R.id.countListCategory);
             RelativelayoutList = itemView.findViewById(R.id.RelativelayoutList);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (listener != null && getAdapterPosition() != RecyclerView.NO_POSITION) {
+                        listener.setOnClick(getAdapterPosition());
+                    }
+                }
+            });
         }
 
-        public void fill(Flower flower,int position) {
+        public void fill(Flower flower, int position) {
             RelativelayoutList.setBackgroundResource(bgCategory[position]);
             imageListCategory.setImageResource(flower.getPhoto());
             nameListCategory.setText(flower.getName());
             countListCategory.setText(String.valueOf(flower.getRatingbar()) + " flowers");
         }
+    }
+
+    public interface onClickListener {
+        void setOnClick(int Position);
+    }
+
+    public void setOnItemClickListener(onClickListener listener) {
+        this.listener = listener;
     }
 }

@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="170dp"
+    android:layout_height="200dp"
     android:layout_margin="10dp"
     app:cardCornerRadius="10dp"
     android:backgroundTint="#838383"
@@ -16,8 +16,7 @@
             android:id="@+id/listImage"
             android:layout_width="match_parent"
             android:layout_height="120dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/flowering_kale" />
+            android:scaleType="centerCrop" />
 
         <View
             android:id="@+id/line"
@@ -38,18 +37,46 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
-                android:text="rgegdegeg"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
 
-            <ImageButton
-                android:id="@+id/favoriteImage"
+            <TextView
+                android:id="@+id/cost"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/name"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="#3BC140"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/favoriteImage"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_below="@+id/name"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toLeftOf="@+id/addImage"
                 android:background="@android:color/transparent"
-                android:src="@drawable/ic_baseline_favorite_24"
-                android:tag="selectHeart" />
+                android:src="@drawable/ic_baseline_favorite_border_24"
+                android:tag="notSelectHeart" />
+
+            <ImageButton
+                android:id="@+id/addImage"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_below="@+id/name"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_baseline_add_shopping_cart_24" />
         </RelativeLayout>
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

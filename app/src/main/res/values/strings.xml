@@ -10,7 +10,7 @@
 
     <string name="UserAccountInformationFragmentTag">UserAccountInformationFragment</string>
     <string name="FavoriteFragmentTag">FavoriteFragment</string>
-
+<string name="ListCategoryFragmentTag">ListCategoryFragment</string>
 
 
 </resources>

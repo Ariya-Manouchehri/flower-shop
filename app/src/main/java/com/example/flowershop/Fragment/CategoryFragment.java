@@ -1,9 +1,11 @@
 package com.example.flowershop.Fragment;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,14 +20,15 @@ import com.example.flowershop.Recyclerview.RecyclerviewCategoryAdapter;
 import java.util.ArrayList;
 
 
-public class CategoryFragment extends Fragment {
+public class CategoryFragment extends Fragment implements RecyclerviewCategoryAdapter.onClickListener {
     RecyclerviewCategoryAdapter recyclerviewCategoryAdapter;
     ArrayList<Flower> flowers = new ArrayList<>();
     RecyclerView recyclerviewCategory;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_category,container,false);
+        return inflater.inflate(R.layout.fragment_category, container, false);
     }
 
     @Override
@@ -39,9 +42,35 @@ public class CategoryFragment extends Fragment {
         flowers.add(new Flower("lithops", R.drawable.flower4, 50));
 
 
-        recyclerviewCategoryAdapter = new RecyclerviewCategoryAdapter(getContext(),flowers);
+        recyclerviewCategoryAdapter = new RecyclerviewCategoryAdapter(getContext(), flowers);
 
         recyclerviewCategory.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerviewCategory.setAdapter(recyclerviewCategoryAdapter);
+
+        recyclerviewCategoryAdapter.setOnItemClickListener(this);
+    }
+
+    @Override
+    public void setOnClick(int Position) {
+        switch (Position) {
+            case 0:
+                ListCategoryFragment.number = 0;
+                getFragmentManager().beginTransaction().replace(R.id.container, new ListCategoryFragment(), getString(R.string.ListCategoryFragmentTag)).addToBackStack(getString(R.string.ListCategoryFragmentTag)).commit();
+                break;
+            case 1:
+                ListCategoryFragment.number = 1;
+                getFragmentManager().beginTransaction().replace(R.id.container, new ListCategoryFragment(), getString(R.string.ListCategoryFragmentTag)).addToBackStack(getString(R.string.ListCategoryFragmentTag)).commit();
+
+                break;
+            case 2:
+                ListCategoryFragment.number = 2;
+                getFragmentManager().beginTransaction().replace(R.id.container, new ListCategoryFragment(), getString(R.string.ListCategoryFragmentTag)).addToBackStack(getString(R.string.ListCategoryFragmentTag)).commit();
+
+                break;
+            case 3:
+                ListCategoryFragment.number = 3;
+                getFragmentManager().beginTransaction().replace(R.id.container, new ListCategoryFragment(), getString(R.string.ListCategoryFragmentTag)).addToBackStack(getString(R.string.ListCategoryFragmentTag)).commit();
+                break;
+        }
     }
 }
