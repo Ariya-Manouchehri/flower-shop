@@ -9,6 +9,8 @@
     <string name="CategoryFragmentTag">CategoryFragment</string>
 
     <string name="UserAccountInformationFragmentTag">UserAccountInformationFragment</string>
+    <string name="FavoriteFragmentTag">FavoriteFragment</string>
+
 
 
 </resources>

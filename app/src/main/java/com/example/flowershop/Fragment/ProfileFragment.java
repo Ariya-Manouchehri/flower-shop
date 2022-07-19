@@ -18,6 +18,8 @@ import com.example.flowershop.R;
 
 public class ProfileFragment extends Fragment implements View.OnClickListener {
     CardView userAccountInformationCardView;
+    CardView favoriteCardView;
+
 
     public ProfileFragment(){
 
@@ -33,12 +35,21 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         userAccountInformationCardView = view.findViewById(R.id.userAccountInformationCardView);
+        favoriteCardView = view.findViewById(R.id.favoriteCardView);
 
+        favoriteCardView.setOnClickListener(this);
         userAccountInformationCardView.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        getFragmentManager().beginTransaction().replace(R.id.container, new UserAccountInformationFragment(), getString(R.string.UserAccountInformationFragmentTag)).addToBackStack(getString(R.string.UserAccountInformationFragmentTag)).commit();
+        switch (v.getId()){
+            case R.id.userAccountInformationCardView:
+                getFragmentManager().beginTransaction().replace(R.id.container, new UserAccountInformationFragment(), getString(R.string.UserAccountInformationFragmentTag)).addToBackStack(getString(R.string.UserAccountInformationFragmentTag)).commit();
+break;
+            case R.id.favoriteCardView:
+                getFragmentManager().beginTransaction().replace(R.id.container, new FavoriteFragment(), getString(R.string.FavoriteFragmentTag)).addToBackStack(getString(R.string.FavoriteFragmentTag)).commit();
+                break;
+        }
     }
 }
