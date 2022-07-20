@@ -14,7 +14,7 @@
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/homeViewPager"
             android:layout_width="match_parent"
-            android:layout_height="200dp"/>
+            android:layout_height="200dp" />
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/dots"
@@ -63,6 +63,7 @@
                     android:textSize="20sp" />
 
                 <ImageView
+                    android:id="@+id/moreDiscount"
                     android:layout_width="28dp"
                     android:layout_height="28dp"
                     android:layout_alignTop="@+id/DiscountImage"
@@ -116,6 +117,7 @@
                     android:textSize="20sp" />
 
                 <ImageView
+                    android:id="@+id/morePopular"
                     android:layout_width="28dp"
                     android:layout_height="28dp"
                     android:layout_alignTop="@+id/PopularImage"

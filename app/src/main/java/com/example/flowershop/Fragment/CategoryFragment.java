@@ -1,6 +1,5 @@
 package com.example.flowershop.Fragment;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,20 +9,12 @@ import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.flowershop.Flower;
 import com.example.flowershop.R;
-import com.example.flowershop.Recyclerview.RecyclerviewCategoryAdapter;
-
-import java.util.ArrayList;
 
 
-public class CategoryFragment extends Fragment implements RecyclerviewCategoryAdapter.onClickListener {
-    RecyclerviewCategoryAdapter recyclerviewCategoryAdapter;
-    ArrayList<Flower> flowers = new ArrayList<>();
-    RecyclerView recyclerviewCategory;
+public class CategoryFragment extends Fragment implements View.OnClickListener {
+    RelativeLayout category1, category2, category3, category4;
 
     @Nullable
     @Override
@@ -34,40 +25,34 @@ public class CategoryFragment extends Fragment implements RecyclerviewCategoryAd
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        recyclerviewCategory = view.findViewById(R.id.recyclerviewCategory);
 
-        flowers.add(new Flower("bonsai", R.drawable.flower1, 50));
-        flowers.add(new Flower("calibrachoa", R.drawable.flower2, 75));
-        flowers.add(new Flower("agapanthus", R.drawable.flower3, 100));
-        flowers.add(new Flower("lithops", R.drawable.flower4, 50));
+        category1 = view.findViewById(R.id.category1);
+        category2 = view.findViewById(R.id.category2);
+        category3 = view.findViewById(R.id.category3);
+        category4 = view.findViewById(R.id.category4);
 
-
-        recyclerviewCategoryAdapter = new RecyclerviewCategoryAdapter(getContext(), flowers);
-
-        recyclerviewCategory.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerviewCategory.setAdapter(recyclerviewCategoryAdapter);
-
-        recyclerviewCategoryAdapter.setOnItemClickListener(this);
+        category1.setOnClickListener(this);
+        category2.setOnClickListener(this);
+        category3.setOnClickListener(this);
+        category4.setOnClickListener(this);
     }
 
     @Override
-    public void setOnClick(int Position) {
-        switch (Position) {
-            case 0:
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.category1:
                 ListCategoryFragment.number = 0;
                 getFragmentManager().beginTransaction().replace(R.id.container, new ListCategoryFragment(), getString(R.string.ListCategoryFragmentTag)).addToBackStack(getString(R.string.ListCategoryFragmentTag)).commit();
                 break;
-            case 1:
+            case R.id.category2:
                 ListCategoryFragment.number = 1;
                 getFragmentManager().beginTransaction().replace(R.id.container, new ListCategoryFragment(), getString(R.string.ListCategoryFragmentTag)).addToBackStack(getString(R.string.ListCategoryFragmentTag)).commit();
-
                 break;
-            case 2:
+            case R.id.category3:
                 ListCategoryFragment.number = 2;
                 getFragmentManager().beginTransaction().replace(R.id.container, new ListCategoryFragment(), getString(R.string.ListCategoryFragmentTag)).addToBackStack(getString(R.string.ListCategoryFragmentTag)).commit();
-
                 break;
-            case 3:
+            case R.id.category4:
                 ListCategoryFragment.number = 3;
                 getFragmentManager().beginTransaction().replace(R.id.container, new ListCategoryFragment(), getString(R.string.ListCategoryFragmentTag)).addToBackStack(getString(R.string.ListCategoryFragmentTag)).commit();
                 break;

@@ -1,57 +1,219 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/purple_200"
-    android:orientation="vertical"
-    tools:context=".Fragment.CategoryFragment">
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
-
-        <TextView
-            android:id="@+id/categoryText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:fontFamily="sans-serif-condensed-medium"
-            android:text="Category"
-            android:textColor="@color/centerGradient"
-            android:textSize="36sp"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/imageCategory"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_below="@+id/categoryText"
-            android:src="@drawable/flower_icon" />
-    </RelativeLayout>
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/bg_category"
-        android:orientation="vertical">
+        android:background="@color/purple_200"
+        android:orientation="vertical"
+        tools:context=".Fragment.CategoryFragment">
 
-        <View
-            android:layout_width="100dp"
-            android:layout_height="5dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/bg_category_view" />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerviewCategory"
+            <TextView
+                android:id="@+id/categoryText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Category"
+                android:textColor="@color/centerGradient"
+                android:textSize="36sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageCategory"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@+id/categoryText"
+                android:src="@drawable/flower_icon" />
+        </RelativeLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scrollbars="vertical"
-            android:layout_marginBottom="70dp"
-            android:layout_marginTop="10dp"/>
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_category"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="100dp"
+                android:layout_height="5dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/bg_category_view" />
+
+            <RelativeLayout
+                android:id="@+id/category1"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@drawable/bg_flower1"
+                android:layout_margin="15dp">
+
+                <ImageView
+                    android:id="@+id/imageCategory1"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="25dp"
+                    android:src="@drawable/flower1" />
+
+                <TextView
+                    android:id="@+id/nameCategory1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toRightOf="@+id/imageCategory1"
+                    android:text="Shrubs"
+                    android:textColor="@color/centerGradient"
+                    android:textSize="23sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/countCategory1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nameCategory1"
+                    android:layout_alignLeft="@+id/nameCategory1"
+                    android:layout_marginTop="10dp"
+                    android:text="15 flowers"
+                    android:textColor="#6003082b"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/category2"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="15dp"
+                android:background="@drawable/bg_flower2">
+
+                <ImageView
+                    android:id="@+id/imageCategory2"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="25dp"
+                    android:src="@drawable/flower2" />
+
+                <TextView
+                    android:id="@+id/nameCategory2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toRightOf="@+id/imageCategory2"
+                    android:text="Container Plants"
+                    android:textColor="@color/centerGradient"
+                    android:textSize="23sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/countCategory2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nameCategory2"
+                    android:layout_alignLeft="@+id/nameCategory2"
+                    android:layout_marginTop="10dp"
+                    android:text="20 flowers"
+                    android:textColor="#6003082b"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/category3"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="15dp"
+                android:background="@drawable/bg_flower3">
+
+                <ImageView
+                    android:id="@+id/imageCategory3"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="25dp"
+                    android:src="@drawable/flower3" />
+
+                <TextView
+                    android:id="@+id/nameCategory3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toRightOf="@+id/imageCategory3"
+                    android:text="Cacti &amp; Succulents"
+                    android:textColor="@color/centerGradient"
+                    android:textSize="23sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/countCategory3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nameCategory3"
+                    android:layout_alignLeft="@+id/nameCategory3"
+                    android:layout_marginTop="10dp"
+                    android:text="13 flowers"
+                    android:textColor="#6003082b"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/category4"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="15dp"
+                android:background="@drawable/bg_flower4"
+                android:layout_marginBottom="70dp">
+
+                <ImageView
+                    android:id="@+id/imageCategory4"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="25dp"
+                    android:src="@drawable/flower4" />
+
+                <TextView
+                    android:id="@+id/nameCategory4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toRightOf="@+id/imageCategory4"
+                    android:text="Herbaceous Perennials"
+                    android:textColor="@color/centerGradient"
+                    android:textSize="23sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/countCategory4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nameCategory4"
+                    android:layout_alignLeft="@+id/nameCategory4"
+                    android:layout_marginTop="10dp"
+                    android:text="23 flowers"
+                    android:textColor="#6003082b"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</ScrollView>

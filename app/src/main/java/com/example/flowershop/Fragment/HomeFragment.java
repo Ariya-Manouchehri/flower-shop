@@ -6,6 +6,7 @@ import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -26,12 +27,13 @@ import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements View.OnClickListener {
     RecyclerViewPopularAdapter recyclerViewPopularAdapter;
     RecyclerViewDiscountAdapter recyclerViewDiscountAdapter;
     RecyclerViewRecentlyAdapter recyclerViewRecentlyAdapter;
     HomeViewpagerAdapter viewpagerAdapter;
     com.google.android.material.tabs.TabLayout dots;
+    ImageView moreDiscount,morePopular;
 
     ArrayList<Flower> flowersPopular = new ArrayList<>();
     ArrayList<Flower> flowersDiscount = new ArrayList<>();
@@ -62,6 +64,8 @@ public class HomeFragment extends Fragment {
         recyclerViewDiscount = view.findViewById(R.id.recyclerViewDiscount);
         viewPagerHome = view.findViewById(R.id.homeViewPager);
         dots = view.findViewById(R.id.dots);
+        moreDiscount = view.findViewById(R.id.moreDiscount);
+        morePopular = view.findViewById(R.id.morePopular);
 
         flowersPopular.add(new Flower("bonsai", R.drawable.aloe_vera, 5));
         flowersPopular.add(new Flower("calibrachoa", R.drawable.calibrachoa, 4));
@@ -136,6 +140,18 @@ public class HomeFragment extends Fragment {
             }
         });
 
+
+        moreDiscount.setOnClickListener(this);
+        morePopular.setOnClickListener(this);
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.moreDiscount:
+            break;
+            case R.id.morePopular:
+            break;
+        }
+    }
 }

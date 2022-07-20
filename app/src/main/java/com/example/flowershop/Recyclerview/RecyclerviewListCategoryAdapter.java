@@ -66,7 +66,7 @@ public class RecyclerviewListCategoryAdapter extends RecyclerView.Adapter<Recycl
                         favoriteImage.setImageResource(R.drawable.ic_baseline_favorite_border_24);
                         favoriteImage.setTag("notSelectHeart");
                     }else if (favoriteImage.getTag().equals("notSelectHeart")){
-                        favoriteImage.startAnimation(AnimationUtils.loadAnimation(v.getContext(), R.anim.fadein_fragment));
+                        favoriteImage.startAnimation(AnimationUtils.loadAnimation(v.getContext(), R.anim.fadeout_fragment));
                         favoriteImage.setImageResource(R.drawable.ic_baseline_favorite_24);
                         favoriteImage.setTag("selectHeart");
                     }
