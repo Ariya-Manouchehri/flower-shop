@@ -77,7 +77,7 @@ public class RecyclerviewListCategoryAdapter extends RecyclerView.Adapter<Recycl
                 @Override
                 public void onClick(View v) {
                     if (listener != null && getAdapterPosition() != RecyclerView.NO_POSITION) {
-                        listener.setOnClick(getAdapterPosition());
+                        listener.setOnClick(flowers.get(getAdapterPosition()));
                     }
                 }
             });
@@ -91,7 +91,7 @@ public class RecyclerviewListCategoryAdapter extends RecyclerView.Adapter<Recycl
     }
 
     public interface onClickListener {
-        void setOnClick(int Position);
+        void setOnClick(Flower flower);
     }
 
     public void setOnItemClickListener(onClickListener listener) {

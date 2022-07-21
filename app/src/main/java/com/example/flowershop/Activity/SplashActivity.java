@@ -1,4 +1,4 @@
-package com.example.flowershop;
+package com.example.flowershop.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,7 +11,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.flowershop.Activity.MainActivity;
+import com.example.flowershop.R;
 
 public class SplashActivity extends AppCompatActivity {
 

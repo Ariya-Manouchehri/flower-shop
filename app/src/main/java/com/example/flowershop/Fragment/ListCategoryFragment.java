@@ -23,7 +23,7 @@ import com.example.flowershop.Recyclerview.RecyclerviewListCategoryAdapter;
 
 import java.util.ArrayList;
 
-public class ListCategoryFragment extends Fragment {
+public class ListCategoryFragment extends Fragment implements RecyclerviewListCategoryAdapter.onClickListener {
     public static int number;
     ImageView imgTitle;
     RecyclerView recyclerviewListCategory;
@@ -38,16 +38,12 @@ public class ListCategoryFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         getActivity().findViewById(R.id.bottomNavigation).setVisibility(View.GONE);
         getActivity().findViewById(R.id.toolbar).setVisibility(View.GONE);
         HomeActivity.checkBackPressed = false;
-    }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_list_category, container, false);
     }
 
@@ -67,14 +63,30 @@ public class ListCategoryFragment extends Fragment {
                 categoryTitle.setText("Shrubs");
                 category.setBackgroundColor(getResources().getColor(R.color.category1Title));
 
-                flowers.add(new Flower("bonsai", R.drawable.aloe_vera, 500));
-                flowers.add(new Flower("calibrachoa", R.drawable.calibrachoa, 715));
-                flowers.add(new Flower("agapanthus", R.drawable.agapanthus, 100));
+                flowers.add(new Flower("dianthus", R.drawable.dianthus, 715));
+                flowers.add(new Flower("agapanthus", R.drawable.string_of_pearls, 100));
                 flowers.add(new Flower("lithops", R.drawable.lithops, 50));
-                flowers.add(new Flower("opuntia_cactus", R.drawable.flowering_kale, 87));
-                flowers.add(new Flower("opuntia_cactus", R.drawable.dianthus, 800));
-                flowers.add(new Flower("opuntia_cactus", R.drawable.agapanthus, 810));
-                flowers.add(new Flower("opuntia_cactus", R.drawable.bougainvillea, 425));
+                flowers.add(new Flower("aloe_vera", R.drawable.aloe_vera, 87));
+                flowers.add(new Flower("bonsai", R.drawable.pansy_blue_shades, 500));
+                flowers.add(new Flower("mexican_golden_barrel_cactus", R.drawable.mexican_golden_barrel_cactus, 800));
+                flowers.add(new Flower("flowering_kale", R.drawable.flowering_kale, 810));
+                flowers.add(new Flower("penny_orange_jumpup", R.drawable.penny_orange_jumpup, 425));
+                flowers.add(new Flower("calibrachoa", R.drawable.rosa_burgundy, 715));
+                flowers.add(new Flower("agapanthus", R.drawable.salvia, 100));
+                flowers.add(new Flower("lithops", R.drawable.lithops, 50));
+                flowers.add(new Flower("flowering_kale", R.drawable.flowering_kale, 87));
+                flowers.add(new Flower("mexican_golden_barrel_cactus", R.drawable.mexican_golden_barrel_cactus, 800));
+                flowers.add(new Flower("agapanthus", R.drawable.agapanthus, 810));
+                flowers.add(new Flower("haight_ashbury", R.drawable.haight_ashbury, 50));
+                flowers.add(new Flower("flowering_kale", R.drawable.flowering_kale, 87));
+                flowers.add(new Flower("pansy_blue_shades", R.drawable.pansy_blue_shades, 500));
+                flowers.add(new Flower("calibrachoa", R.drawable.calibrachoa, 800));
+                flowers.add(new Flower("rosa_iceberg", R.drawable.rosa_iceberg, 810));
+                flowers.add(new Flower("string_of_pearls", R.drawable.string_of_pearls, 425));
+                flowers.add(new Flower("mona_lavender", R.drawable.mona_lavender, 425));
+                flowers.add(new Flower("bougainvillea", R.drawable.bougainvillea, 500));
+                flowers.add(new Flower("rosa_burgundy", R.drawable.rosa_burgundy, 715));
+                flowers.add(new Flower("agapanthus", R.drawable.agapanthus, 100));
                 break;
             case 1:
                 CategoryListRelativelayoutList.setBackgroundColor(getResources().getColor(R.color.category2));
@@ -127,6 +139,8 @@ public class ListCategoryFragment extends Fragment {
 
         recyclerviewListCategory.setLayoutManager(new GridLayoutManager(getContext(), 2));
         recyclerviewListCategory.setAdapter(recyclerviewListCategoryAdapter);
+
+        recyclerviewListCategoryAdapter.setOnItemClickListener(this);
     }
 
     @Override
@@ -136,5 +150,18 @@ public class ListCategoryFragment extends Fragment {
         getActivity().findViewById(R.id.toolbar).setVisibility(View.VISIBLE);
         HomeActivity.checkBackPressed = true;
 
+    }
+
+    @Override
+    public void setOnClick(Flower flower) {
+        DetailsFragment fragment = new DetailsFragment();
+        Bundle bundle = new Bundle();
+
+        bundle.putString("flower_name",flower.getName());
+        bundle.putInt("flower_photo",flower.getPhoto());
+        bundle.putInt("flower_price",flower.getRatingbar());
+        fragment.setArguments(bundle);
+
+        getFragmentManager().beginTransaction().replace(R.id.container, fragment, getString(R.string.DetailsFragmentTag)).addToBackStack(getString(R.string.DetailsFragmentTag)).commit();
     }
 }

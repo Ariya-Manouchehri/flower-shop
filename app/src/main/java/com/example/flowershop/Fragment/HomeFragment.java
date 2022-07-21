@@ -13,6 +13,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
@@ -23,6 +24,7 @@ import com.example.flowershop.R;
 import com.example.flowershop.Recyclerview.RecyclerViewDiscountAdapter;
 import com.example.flowershop.Recyclerview.RecyclerViewPopularAdapter;
 import com.example.flowershop.Recyclerview.RecyclerViewRecentlyAdapter;
+import com.example.flowershop.Recyclerview.RecyclerviewListCategoryAdapter;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -40,10 +42,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     ArrayList<Flower> flowersRecently = new ArrayList<>();
     ArrayList<Flower> flowersViewpager = new ArrayList<>();
 
+
     RecyclerView recyclerViewPopular;
     RecyclerView recyclerViewDiscount;
     RecyclerView recyclerViewRecently;
+
     ViewPager viewPagerHome;
+
 
 
     public HomeFragment() {
