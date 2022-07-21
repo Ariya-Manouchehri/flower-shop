@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
@@ -18,6 +19,8 @@ import com.example.flowershop.Activity.HomeActivity;
 import com.example.flowershop.Flower;
 import com.example.flowershop.R;
 import com.example.flowershop.Recyclerview.CartRecyclerViewAdapter;
+import com.example.flowershop.Recyclerview.FavoriteRecyclerViewAdapter;
+import com.example.flowershop.Recyclerview.RecyclerViewRecentlyAdapter;
 import com.example.flowershop.ViewPagerDetailsAdapter;
 import com.google.android.material.tabs.TabLayout;
 
@@ -31,6 +34,10 @@ public class DetailsFragment extends Fragment {
     ViewPagerDetailsAdapter viewPagerDetailsAdapter;
     TabLayout tabLayout;
 
+    RecyclerView recyclerViewSimilarProducts;
+    RecyclerViewRecentlyAdapter recyclerViewRecentlyAdapter;
+    ArrayList<Flower> flowers = new ArrayList<>();
+
     public DetailsFragment() {
 
     }
@@ -43,7 +50,6 @@ public class DetailsFragment extends Fragment {
         getActivity().findViewById(R.id.toolbar).setVisibility(View.GONE);
         HomeActivity.checkBackPressed = false;
     }
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -58,6 +64,7 @@ public class DetailsFragment extends Fragment {
         cost = view.findViewById(R.id.cost);
         viewpagerDetails = view.findViewById(R.id.viewpagerDetails);
         tabLayout = view.findViewById(R.id.tabLayout);
+        recyclerViewSimilarProducts = view.findViewById(R.id.recyclerViewSimilarProducts);
 
         viewPagerDetailsAdapter = new ViewPagerDetailsAdapter(getActivity().getSupportFragmentManager());
         viewPagerDetailsAdapter.addMethod(new SpecificationsFragment(), "Specifications");
@@ -70,6 +77,21 @@ public class DetailsFragment extends Fragment {
         detailsImage.setImageResource(bundle.getInt("flower_photo"));
         flowerName.setText(bundle.getString("flower_name"));
         cost.setText("$" + bundle.getInt("flower_price"));
+
+
+        flowers.add(new Flower("bonsai", R.drawable.aloe_vera, 5));
+        flowers.add(new Flower("calibrachoa", R.drawable.calibrachoa, 4));
+        flowers.add(new Flower("agapanthus", R.drawable.agapanthus, 2));
+        flowers.add(new Flower("lithops", R.drawable.lithops, 2));
+        flowers.add(new Flower("opuntia_cactus", R.drawable.flowering_kale, 3));
+        flowers.add(new Flower("opuntia_cactus", R.drawable.dianthus, 3));
+        flowers.add(new Flower("opuntia_cactus", R.drawable.agapanthus, 5));
+        flowers.add(new Flower("opuntia_cactus", R.drawable.bougainvillea, 4));
+
+
+        recyclerViewRecentlyAdapter = new RecyclerViewRecentlyAdapter(getContext(),flowers);
+        recyclerViewSimilarProducts.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+        recyclerViewSimilarProducts.setAdapter(recyclerViewRecentlyAdapter);
     }
 
     @Override

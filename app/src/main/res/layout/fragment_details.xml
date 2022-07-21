@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ScrollView android:layout_width="match_parent"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <RelativeLayout
@@ -100,14 +101,14 @@ Agapanthus thrive in a sunny, sheltered space, although they do still bloom well
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:tabGravity="fill"
-                    app:tabMode="fixed">
-                </com.google.android.material.tabs.TabLayout>
+                    app:tabMode="scrollable"/>
 
-               <androidx.viewpager.widget.ViewPager
-                   android:id="@+id/viewpagerDetails"
-                   android:layout_width="match_parent"
-                   android:layout_height="match_parent"
-                   android:layout_below="@+id/tabLayout"/>
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewpagerDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/tabLayout"
+                    android:layout_marginTop="10dp" />
             </RelativeLayout>
 
             <View
@@ -136,24 +137,32 @@ Agapanthus thrive in a sunny, sheltered space, although they do still bloom well
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewSimilarProducts"
                 android:layout_width="match_parent"
-                android:layout_height="190dp"
+                android:layout_height="140dp"
                 android:layout_below="@+id/similarProducts"
-                android:layout_margin="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
                 android:scrollbars="horizontal" />
 
-
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@+id/recyclerViewSimilarProducts"/>
         </RelativeLayout>
     </ScrollView>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true">
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:text="add to cart" />
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 </RelativeLayout>

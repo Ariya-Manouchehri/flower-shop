@@ -80,7 +80,7 @@
                 android:layout_alignTop="@+id/labelGender"
                 android:layout_toRightOf="@+id/labelGender"
                 android:fontFamily="sans-serif-condensed-light"
-                android:text="bisexual"
+                android:text="male"
                 android:textColor="#ffffff"
                 android:textSize="20sp" />
 
