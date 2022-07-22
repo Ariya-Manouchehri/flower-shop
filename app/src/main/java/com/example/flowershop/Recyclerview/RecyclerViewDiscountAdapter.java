@@ -19,6 +19,8 @@ import java.util.ArrayList;
 public class RecyclerViewDiscountAdapter extends RecyclerView.Adapter<RecyclerViewDiscountAdapter.Holder> {
     Context context;
     ArrayList<Flower> flowers;
+    RecyclerviewListCategoryAdapter.onClickListener listener;
+
 
     public RecyclerViewDiscountAdapter(Context context, ArrayList<Flower> flowers) {
         this.context = context;
@@ -51,6 +53,15 @@ public class RecyclerViewDiscountAdapter extends RecyclerView.Adapter<RecyclerVi
             name = itemView.findViewById(R.id.name);
             count = itemView.findViewById(R.id.count);
             disCount = itemView.findViewById(R.id.disCount);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (listener != null && getAdapterPosition() != RecyclerView.NO_POSITION) {
+                        listener.setOnClick(flowers.get(getAdapterPosition()));
+                    }
+                }
+            });
         }
         public void fill(Flower flower){
             img.setImageResource(flower.getPhoto());
@@ -59,5 +70,13 @@ public class RecyclerViewDiscountAdapter extends RecyclerView.Adapter<RecyclerVi
             disCount.setText("$"+ (flower.getRatingbar() - 20));
 
         }
+    }
+
+    public interface onClickListener {
+        void setOnClick(Flower flower);
+    }
+
+    public void setOnItemClickListener(RecyclerviewListCategoryAdapter.onClickListener listener) {
+        this.listener = listener;
     }
 }

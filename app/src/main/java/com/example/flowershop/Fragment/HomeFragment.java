@@ -29,13 +29,13 @@ import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 
-public class HomeFragment extends Fragment implements View.OnClickListener {
+public class HomeFragment extends Fragment implements View.OnClickListener, RecyclerviewListCategoryAdapter.onClickListener {
     RecyclerViewPopularAdapter recyclerViewPopularAdapter;
     RecyclerViewDiscountAdapter recyclerViewDiscountAdapter;
     RecyclerViewRecentlyAdapter recyclerViewRecentlyAdapter;
     HomeViewpagerAdapter viewpagerAdapter;
     com.google.android.material.tabs.TabLayout dots;
-    ImageView moreDiscount,morePopular;
+    ImageView moreDiscount, morePopular;
 
     ArrayList<Flower> flowersPopular = new ArrayList<>();
     ArrayList<Flower> flowersDiscount = new ArrayList<>();
@@ -50,27 +50,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     ViewPager viewPagerHome;
 
 
-
     public HomeFragment() {
 
     }
 
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_home, container, false);
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        recyclerViewPopular = view.findViewById(R.id.recyclerViewPopular);
-        recyclerViewRecently = view.findViewById(R.id.recyclerViewRecently);
-        recyclerViewDiscount = view.findViewById(R.id.recyclerViewDiscount);
-        viewPagerHome = view.findViewById(R.id.homeViewPager);
-        dots = view.findViewById(R.id.dots);
-        moreDiscount = view.findViewById(R.id.moreDiscount);
-        morePopular = view.findViewById(R.id.morePopular);
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
         flowersPopular.add(new Flower("bonsai", R.drawable.aloe_vera, 5));
         flowersPopular.add(new Flower("calibrachoa", R.drawable.calibrachoa, 4));
@@ -106,6 +92,24 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         flowersViewpager.add(new Flower("pincushion", R.drawable.pincushion, 100));
         flowersViewpager.add(new Flower("red cactus", R.drawable.red_cactus, 80));
         flowersViewpager.add(new Flower("red cactus", R.drawable.red_cactus, 80));
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_home, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        recyclerViewPopular = view.findViewById(R.id.recyclerViewPopular);
+        recyclerViewRecently = view.findViewById(R.id.recyclerViewRecently);
+        recyclerViewDiscount = view.findViewById(R.id.recyclerViewDiscount);
+        viewPagerHome = view.findViewById(R.id.homeViewPager);
+        dots = view.findViewById(R.id.dots);
+        moreDiscount = view.findViewById(R.id.moreDiscount);
+        morePopular = view.findViewById(R.id.morePopular);
 
 
         recyclerViewPopularAdapter = new RecyclerViewPopularAdapter(getContext(), flowersPopular);
@@ -125,7 +129,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         viewPagerHome.setAdapter(viewpagerAdapter);
         dots.setupWithViewPager(viewPagerHome, true);
         viewPagerHome.setCurrentItem(0);
-        viewpagerAdapter.setTimer(viewPagerHome, 5, 4,0);
+        viewpagerAdapter.setTimer(viewPagerHome, 5, 4, 0);
 
         viewPagerHome.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -136,7 +140,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onPageSelected(int position) {
                 viewpagerAdapter.stopTimer();
-                viewpagerAdapter.setTimer(viewPagerHome, 5, 5,position);
+                viewpagerAdapter.setTimer(viewPagerHome, 5, 5, position);
             }
 
             @Override
@@ -145,6 +149,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             }
         });
 
+        recyclerViewPopularAdapter.setOnItemClickListener(this);
+        recyclerViewDiscountAdapter.setOnItemClickListener(this);
 
         moreDiscount.setOnClickListener(this);
         morePopular.setOnClickListener(this);
@@ -152,11 +158,28 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.moreDiscount:
-            break;
+                ListHomeFragment.number = 0;
+                getFragmentManager().beginTransaction().replace(R.id.container, new ListHomeFragment(), getString(R.string.ListHomeFragmentTag)).addToBackStack(getString(R.string.ListHomeFragmentTag)).commit();
+                break;
             case R.id.morePopular:
-            break;
+                ListHomeFragment.number = 1;
+                getFragmentManager().beginTransaction().replace(R.id.container, new ListHomeFragment(), getString(R.string.ListHomeFragmentTag)).addToBackStack(getString(R.string.ListHomeFragmentTag)).commit();
+                break;
         }
+    }
+
+    @Override
+    public void setOnClick(Flower flower) {
+        DetailsFragment fragment = new DetailsFragment();
+        Bundle bundle = new Bundle();
+
+        bundle.putString("flower_name",flower.getName());
+        bundle.putInt("flower_photo",flower.getPhoto());
+        bundle.putInt("flower_price",flower.getRatingbar());
+        fragment.setArguments(bundle);
+
+        getFragmentManager().beginTransaction().replace(R.id.container, fragment, getString(R.string.DetailsFragmentTag)).addToBackStack(getString(R.string.DetailsFragmentTag)).commit();
     }
 }

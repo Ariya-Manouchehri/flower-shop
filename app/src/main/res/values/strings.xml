@@ -12,8 +12,10 @@
     <string name="FavoriteFragmentTag">FavoriteFragment</string>
     <string name="ListCategoryFragmentTag">ListCategoryFragment</string>
     <string name="DetailsFragmentTag">DetailsFragment</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="ListHomeFragmentTag">ListHomeFragment</string>
+
+
 
 
 </resources>
