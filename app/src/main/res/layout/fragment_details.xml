@@ -89,7 +89,7 @@ Agapanthus thrive in a sunny, sheltered space, although they do still bloom well
             <RelativeLayout
                 android:id="@+id/tabLayoutRelative"
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
+                android:layout_height="400dp"
                 android:layout_below="@id/line2"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"

@@ -133,7 +133,7 @@
             app:counterEnabled="true"
             app:counterMaxLength="200"
             app:endIconMode="clear_text"
-            app:errorTextColor="#D80E00"
+            app:errorTextColor="#FF1D0E"
             app:helperText="please enter your address fluently and completely.">
 
             <com.google.android.material.textfield.TextInputEditText

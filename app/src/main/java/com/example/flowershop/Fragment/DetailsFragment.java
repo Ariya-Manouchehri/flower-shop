@@ -49,7 +49,18 @@ public class DetailsFragment extends Fragment {
         getActivity().findViewById(R.id.bottomNavigation).setVisibility(View.GONE);
         getActivity().findViewById(R.id.toolbar).setVisibility(View.GONE);
         HomeActivity.checkBackPressed = false;
+
+
+        flowers.add(new Flower("bonsai", R.drawable.aloe_vera, 5));
+        flowers.add(new Flower("calibrachoa", R.drawable.calibrachoa, 4));
+        flowers.add(new Flower("agapanthus", R.drawable.agapanthus, 2));
+        flowers.add(new Flower("lithops", R.drawable.lithops, 2));
+        flowers.add(new Flower("opuntia_cactus", R.drawable.flowering_kale, 3));
+        flowers.add(new Flower("opuntia_cactus", R.drawable.dianthus, 3));
+        flowers.add(new Flower("opuntia_cactus", R.drawable.agapanthus, 5));
+        flowers.add(new Flower("opuntia_cactus", R.drawable.bougainvillea, 4));
     }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -66,7 +77,7 @@ public class DetailsFragment extends Fragment {
         tabLayout = view.findViewById(R.id.tabLayout);
         recyclerViewSimilarProducts = view.findViewById(R.id.recyclerViewSimilarProducts);
 
-        viewPagerDetailsAdapter = new ViewPagerDetailsAdapter(getActivity().getSupportFragmentManager());
+        viewPagerDetailsAdapter = new ViewPagerDetailsAdapter(getChildFragmentManager());
         viewPagerDetailsAdapter.addMethod(new SpecificationsFragment(), "Specifications");
         viewPagerDetailsAdapter.addMethod(new CommentsFragment(), "Comments");
         viewPagerDetailsAdapter.addMethod(new RegisterCommentFragment(), "Register a Comment");
@@ -79,17 +90,7 @@ public class DetailsFragment extends Fragment {
         cost.setText("$" + bundle.getInt("flower_price"));
 
 
-        flowers.add(new Flower("bonsai", R.drawable.aloe_vera, 5));
-        flowers.add(new Flower("calibrachoa", R.drawable.calibrachoa, 4));
-        flowers.add(new Flower("agapanthus", R.drawable.agapanthus, 2));
-        flowers.add(new Flower("lithops", R.drawable.lithops, 2));
-        flowers.add(new Flower("opuntia_cactus", R.drawable.flowering_kale, 3));
-        flowers.add(new Flower("opuntia_cactus", R.drawable.dianthus, 3));
-        flowers.add(new Flower("opuntia_cactus", R.drawable.agapanthus, 5));
-        flowers.add(new Flower("opuntia_cactus", R.drawable.bougainvillea, 4));
-
-
-        recyclerViewRecentlyAdapter = new RecyclerViewRecentlyAdapter(getContext(),flowers);
+        recyclerViewRecentlyAdapter = new RecyclerViewRecentlyAdapter(getContext(), flowers);
         recyclerViewSimilarProducts.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
         recyclerViewSimilarProducts.setAdapter(recyclerViewRecentlyAdapter);
     }
